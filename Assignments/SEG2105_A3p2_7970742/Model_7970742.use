@@ -1,0 +1,118 @@
+model Model_7970742
+
+--class
+
+
+class University
+attributes
+	name: String
+	location: String
+
+end
+
+
+class Discipline
+attributes
+	courseCode: String
+	description: String
+end
+
+class Program
+attributes
+	requiredCourses: String
+	code: String
+	electiveCourse: String
+	freeElectiveCourse: Integer
+	optionCourse: String
+end
+
+class Course
+attributes
+	title: String
+	year: Integer
+	code: String
+	description: String
+	prerequisiteCourse: String
+	mutuallyExclusiveCourse: String
+
+end
+
+class Department
+attributes
+	name: String
+end
+
+class Version
+attributes
+	startDate: String
+	versionNum: Real
+end	
+
+
+-- associations
+
+association ProgramOf between
+	University [1] role university	
+	Program [*] role program
+end
+
+association belongsTo between
+	Program [*] role program1
+	Department [*] role department
+end
+
+association has between 
+	Program [*] role program3
+	Course [*] role course
+end
+
+association belongsToThe between
+	Program [*] role program4
+	Discipline [*] role discipline
+end
+
+association isMutuallyExclusiveWith between
+	Course [*] role firstCourse
+	Course [*] role sameCourse
+end
+
+association orderOfCourse between 
+	Course[*] role prerequisite
+	Course[*] role successor
+end
+
+association version between
+	Program [*] role theProgram
+	Version [1..*] role version 
+end
+
+association departmentOf between
+	University [1] role theSchool
+	Department[*] role theDepartment
+end
+
+association courseOf between
+	University[1] role theUniversity
+	Course[*] role theCourses
+end
+-- constraints
+
+constraints
+context Department inv CheckForNumber:
+	self.program1->size >= 1
+
+--context Course inv CheckForYear:
+--	self.year.allInstances->forAll(c:Course| c.year=1 or c.year=2 or c.year=3 or c.year=4)
+
+context Course inv NotEmpty:
+	self.code <> null
+
+--context Course inv CheckForSameCourseCode:
+--	self.version.allInstances() -> forAll(v1,v2| v1 <>v2 implies p1.code <> p2.code)
+
+context University inv CheckForSize:
+	self.program->size >= 1
+
+
+
+

@@ -1,0 +1,211 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf340
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww18520\viewh11600\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Felix Singerman - 7970742\
+\
+
+\b Class Diagram:\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\b0 \cf0 {{\NeXTGraphic Screen Shot 2016-11-07 at 8.56.02 PM.png \width16780 \height9300
+}¬}
+\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\b0 \cf0 model Model_7970742\
+\
+--class\
+\
+\
+class University\
+attributes\
+	name: String\
+	location: String\
+\
+end\
+\
+\
+class Discipline\
+attributes\
+	courseCode: String\
+	description: String\
+end\
+\
+class Program\
+attributes\
+	requiredCourses: String\
+	code: String\
+	electiveCourse: String\
+	freeElectiveCourse: Integer\
+	optionCourse: String\
+end\
+\
+class Course\
+attributes\
+	title: String\
+	year: Integer\
+	code: String\
+	description: String\
+	prerequisiteCourse: String\
+	mutuallyExclusiveCourse: String\
+\
+end\
+\
+class Department\
+attributes\
+	name: String\
+end\
+\
+class Version\
+attributes\
+	startDate: String\
+	versionNum: Real\
+end	\
+\
+\
+-- associations\
+\
+association ProgramOf between\
+	University [1] role university	\
+	Program [*] role program\
+end\
+\
+association belongsTo between\
+	Program [*] role program1\
+	Department [*] role department\
+end\
+\
+association has between \
+	Program [*] role program3\
+	Course [*] role course\
+end\
+\
+association belongsToThe between\
+	Program [*] role program4\
+	Discipline [*] role discipline\
+end\
+\
+association isMutuallyExclusiveWith between\
+	Course [*] role firstCourse\
+	Course [*] role sameCourse\
+end\
+\
+association orderOfCourse between \
+	Course[*] role prerequisite\
+	Course[*] role successor\
+end\
+\
+association version between\
+	Program [*] role theProgram\
+	Version [1..*] role version \
+end\
+\
+association departmentOf between\
+	University [1] role theSchool\
+	Department[*] role theDepartment\
+end\
+\
+association courseOf between\
+	University[1] role theUniversity\
+	Course[*] role theCourses\
+end\
+\
+
+\b \
+Object Diagram: \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\b0 \cf0 {{\NeXTGraphic Screen Shot 2016-11-07 at 9.06.12 PM.png \width13800 \height6160
+}¬}\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\b \cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\b0 \cf0 Objects_7970742\
+\
+!create uOttawa:University\
+\
+!set uOttawa.name:='University Of Ottawa'\
+!set uOttawa.location:='Ottawa'\
+\
+!create ComputerScience:Program\
+\
+!set ComputerScience.name:='Computer Science'\
+\
+!create Engineering:Department\
+\
+!set Engineering.name:='Engineering'\
+\
+\
+!create Android:Course\
+!set Android.name:='Android Development'\
+!set Android.code:='CSI2244'\
+\
+\
+!create iOS:Course\
+!set iOS.name:='iOS Development'\
+!set iOS.code:='CSI2244'\
+!set iOS.year:= 2016\
+\
+\
+\
+--links\
+\
+!insert (uOttawa,ComputerScience) into ProgramOf\
+!insert (ComputerScience, Engineering) into belongsTo\
+!insert (Android, ComputerScience) into has\
+!insert (iOS, ComputerScience) into has\
+\
+\
+
+\b \
+\
+OCL Contraint: \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\b0 \cf0 {{\NeXTGraphic Screen Shot 2016-11-07 at 8.57.45 PM.png \width20260 \height2000
+}¬}\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 constraints\
+context Department inv CheckForNumber:\
+	self.program1->size >= 1\
+\
+--context Course inv CheckForYear:\
+--	self.year.allInstances->forAll(c:Course| c.year=1 or c.year=2 or c.year=3 or c.year=4)\
+\
+context Course inv NotEmpty:\
+	self.code <> null\
+\
+--context Course inv CheckForSameCourseCode:\
+--	self.version.allInstances() -> forAll(v1,v2| v1 <>v2 implies p1.code <> p2.code)\
+\
+context University inv CheckForSize:\
+	self.program->size >= 1\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\b \cf0 Operations
+\b0 :\
+\
+1)checkPrereq(course)\
+I would implement this method so that you can check if a course has any pre requisites and that the person can take a course. It would be in class course. \
+\
+2)addCourse(course)\
+In class program i would addCourse to add a course to a program. \
+\
+3)setRequiredCourse(course)\
+\
+If ever you needed to add a course to be a requirement of another course you can add that course here. I would put this in class course. \
+\
+4) setVersion(course)\
+If you needed to change the version of a course, if there is a new version then all the course would need a new version. this would be in class Version\
+\
+5)checkElective()\
+\
+this would check if the user can take anymore elective courses. it would return a boolean value. this would be in class Program. \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+}
