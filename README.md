@@ -4,4 +4,4 @@ Fall 2016
 
 Felix Singerman
 
-Labs, assignments, and final project apk for this course. This is for educational purposes only. 
+Labs, assignments, and final project apk for this course. This is for educational purposes only. Beware that there's mistakes. 
