@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="help_text_section1">
+        Allows you to search for a recipe of your choosing
+    </string>
+    <string name="help_topic_search">
+        <![CDATA[
+        <p>
+        To search for a recipe:
+        </p>
+        <ul>
+        Select FoodType from the drop-down list.
+        Click on search icon.
+        OR
+        Type in ingredient name(s) and select category from the drop-down list.
+        Click on search icon.
+        </ul>
+        ]]>
+    </string>
+
+    <string name="help_text_section2">
+        Allows you to add a recipe of your choosing
+    </string>
+    <string name="help_topic_add">
+        <![CDATA[
+        <p>
+        To add a recipe:
+        </p>
+        <ul type="square">
+        <li>Click on green <b>+</b> sign.</li>
+        <li>Type in title of recipe, specifying number of people the dish serves.</li>
+        <li>Type in category. Enter recipe type e.g Indian, Nigerian, Brazilian</li>
+        <li>Type in ingredients and desired quantity.</li>
+        <li>Click the <b>+</b> button to enter more ingredients.</li>
+        <li>Type in the instructions.</li>
+        <li>Click the <b>+</b> button to enter more ingredients.</li>
+        <li>Click on save.</li>
+        </ul>
+        ]]>
+    </string>
+
+    <string name="help_text_section3">
+        Allows you to modify an existing recipe of your choosing
+    </string>
+    <string name="help_topic_modify">
+        <![CDATA[
+        <p>
+        To modify a recipe:
+        </p>
+        Select the recipe you wish to modify. Click on the modify icon. Edit recipe and save.
+        ]]>
+    </string>
+
+    <string name="help_text_section4">
+        Allows you to delete an existing recipe of your choosing
+    </string>
+    <string name="help_text_delete">
+        <![CDATA[
+        <p>
+        To delete a recipe:
+        </p>
+        Long click on a recipe of choice in the list. You will be prompted to confirm or cancel the request. If you confirm, then go back to the main page and back to the list and you will see the udpated recipe list.
+        ]]>
+    </string>
+
+</resources>
+
+
+

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+
+    tools:context="com.example.eyobt.cook.RecipeDetail">
+
+    <LinearLayout
+     android:orientation="vertical"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"
+            android:layout_width="match_parent">
+
+        </include>
+
+        <LinearLayout
+           android:orientation="horizontal"
+           android:layout_width="wrap_content"
+          android:layout_height="wrap_content">
+
+            <ImageView
+              android:layout_width="75dp"
+              android:layout_height="75dp"
+              android:id="@+id/imageView_RecipeIcon"
+              android:src="@drawable/chef" />
+
+            <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="fill_parent"
+              android:text="Recipe Name"
+              android:id="@+id/textView_RecipeName"
+              android:textSize="25dp"
+              android:textAlignment="center"
+              android:gravity="center"
+              android:textColor="#000000"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ingredients"
+                android:id="@+id/textView_Ingredients"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:padding="5dp"
+                android:layout_gravity="center_horizontal"
+                android:textAllCaps="false"
+                android:scrollbarAlwaysDrawHorizontalTrack="true" />
+
+        <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="130dp"
+            android:id="@+id/listView_Ingredients"
+            android:background="@android:color/transparent" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Instructions"
+            android:id="@+id/textView_Instructions"
+            android:hapticFeedbackEnabled="false"
+            android:textSize="20dp"
+            android:textColor="#000000"
+            android:padding="5dp"
+            android:layout_centerHorizontal="true"
+            android:textAllCaps="true" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/steps"
+            android:layout_below="@+id/textView_Instructions"
+            android:textSize="20sp"
+            android:textIsSelectable="true"
+            android:textColor="@android:color/black"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:paddingRight="2dp" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>
+
+</RelativeLayout>

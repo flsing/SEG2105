@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Munchies</string>
+
+    <string name="hello_world">Select Food Type!</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="Country">
+        <item>American</item>
+        <item>Argentine</item>
+        <item>Brazilian</item>
+        <item>Canadian</item>
+        <item>Chinese</item>
+        <item>Columbian</item>
+        <item>Ethiopian</item>
+        <item>French</item>
+        <item>Indian</item>
+        <item>Italian</item>
+        <item>Greek</item>
+        <item>Japanese</item>
+        <item>Korean</item>
+        <item>Israeli</item>
+        <item>Mexican</item>
+        <item>Moroccan</item>
+        <item>Thai</item>
+
+
+    </string-array>
+
+    <string name="Category">Category</string>
+
+    <string-array name="Category">
+
+        <item>Main Dish</item>
+        <item>Starter</item>
+        <item>Appetizer</item>
+        <item>Dessert</item>
+        <item>Drink</item>
+        <item>Sauce</item>
+    </string-array>
+    <string name="title_activity_recipe_layout_2">recipe_layout_2</string>
+</resources>

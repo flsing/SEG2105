@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <ScrollView android:id="@+id/ScrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar"
+                android:layout_width="match_parent">
+
+            </include>
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:padding="6dip">
+
+                <Button
+                    android:text="Search"
+                    android:layout_width="220dip"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/help_button1"
+                    android:layout_weight="1"
+                    android:onClick="onClickHelp" />
+
+                <TextView
+                    android:text="@string/help_text_section1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView5"
+                    android:layout_weight="1"
+                    android:padding="8dip"
+                    android:textColor="@android:color/black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:padding="6dip">
+
+                <Button
+                    android:text="add new recipe"
+                    android:layout_width="180dip"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/help_button2"
+                    android:layout_weight="1"
+                    android:onClick="onClickHelp" />
+
+                <TextView
+                    android:text="@string/help_text_section2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView6"
+                    android:layout_weight="1"
+                    android:padding="8dip"
+                    android:textColor="@android:color/black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:padding="6dip">
+
+                <Button
+                    android:text="Modify recipe"
+                    android:layout_width="260dip"
+                    android:layout_height="match_parent"
+                    android:id="@+id/help_button3"
+                    android:layout_weight="1"
+                    android:onClick="onClickHelp"/>
+
+                <TextView
+                    android:text="@string/help_text_section3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView7"
+                    android:layout_weight="1"
+                    android:padding="8dip"
+                    android:textColor="@android:color/black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:padding="6dip">
+
+                <Button
+                    android:text="delete recipe"
+                    android:layout_width="257dip"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/help_button4"
+                    android:layout_weight="1"
+                    android:onClick="onClickHelp" />
+
+                <TextView
+                    android:text="@string/help_text_section4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView4"
+                    android:layout_weight="1"
+                    android:padding="8dip"
+                    android:textColor="@android:color/black" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
